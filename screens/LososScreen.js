@@ -5,7 +5,6 @@ import {
   Image,
   TextInput,
   ScrollView,
-  Button,
 } from "react-native";
 import React, { useLayoutEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
@@ -18,7 +17,7 @@ import {
 import Categories from "../components/Categories";
 import FeaturedRow from "../components/FeaturedRow";
 
-const HomeScreen = () => {
+const LososScreen = () => {
   const navigation = useNavigation();
 
   useLayoutEffect(() => {
@@ -47,48 +46,8 @@ const HomeScreen = () => {
       </View>
 
       {/* Search */}
-      <View className="flex-row items-center space-x-2 pb-2 mx-4">
-        <View className="flex-row flex-1 space-x-2 bg-gray-200 p-3">
-          <SearchIcon color="gray" size={20} />
-          <TextInput
-            placeholder="Restaurant and cuisines"
-            keyboardType="default"
-          />
-        </View>
-        <AdjustmentsIcon color={"#00CCBB"} />
-      </View>
-      <Button
-        title="Go to Losos"
-        onPress={() => navigation.navigate("Losos")}
-      />
-      {/* Body */}
-      <ScrollView
-        className="bg-gray-100"
-        contentContainerStyle={{
-          paddingBottom: 100,
-        }}
-      >
-        {/* Categories */}
-        <Categories />
-        {/* Featured Rows */}
-        <FeaturedRow
-          id="123"
-          title="Featured"
-          description="Paid placement from our partners"
-        />
-        <FeaturedRow
-          id="1234"
-          title="Tasty Discounts"
-          description="Everyone's been enjoyed these juicy discounts"
-        />
-        <FeaturedRow
-          id="12345"
-          title="Offers Near You"
-          description="Why not support your local restaurant tonight!"
-        />
-      </ScrollView>
     </SafeAreaView>
   );
 };
 
-export default HomeScreen;
+export default LososScreen;
